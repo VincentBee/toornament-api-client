@@ -12,13 +12,13 @@ This component aim to request and interpret Toornaments Api endpoints through si
 To use this http client, proceed as follow
 
     // Instanciate the toornament api client with your configuration
-    var toornamentApi = new Toornament({
+    var client = new Toornament({
         apiKey: apiKey,
         clientId: clientId,
         clientSecret: clientSecret
     });
     // Add a call to the queue
-    toornamentApi.callApi('get_stage', {tournamentId: tournamentId, stageNumber: stageNumber}, function (data) {
+    client.stage.get({tournamentId: tournamentId, stageNumber: stageNumber}, function (data) {
         console.log(data);
     }, showError);
     // Execute prepared calls
